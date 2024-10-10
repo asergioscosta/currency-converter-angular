@@ -1,0 +1,85 @@
+<!-- Preloader -->
+<div class="preloader" style="opacity: 0; display: none;">
+    <div class="preloader-inner">
+        <div class="preloader-icon">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!-- /End Preloader -->
+
+<!-- Start Breadcrumbs -->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                <div class="breadcrumbs-content">
+                    <h1 class="page-title">Listagem de Moedas</h1>
+                </div>
+                <ul class="breadcrumb-nav">
+                    <li><a href="pagina-inicial">Página Inicial</a></li>
+                    <li>Listagem de Moedas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Breadcrumbs -->
+
+<!-- Start Blog Singel Area -->
+<section class="section blog-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
+                <div class="single-inner">
+                    <div class="post-details">
+                        <div class="main-content-head">
+                            <div class="meta-information">
+                                <h4 class="post-title">
+                                    Aqui você encontra uma coleção completa de moedas de todo o mundo, com códigos,
+                                    nomes e descrições detalhadas para facilitar sua pesquisa.
+                                </h4>
+                                <!-- End Meta Info -->
+                            </div>
+
+                            <div class="mat-elevation-z8">
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>Filtro</mat-label>
+                                    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+                                </mat-form-field>
+
+                                <table mat-table [dataSource]="dataSource" matSort style="width: 100%;">
+
+                                    <!-- Position Column -->
+                                    <ng-container matColumnDef="codigo">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Código </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+                                    </ng-container>
+
+                                    <!-- Name Column -->
+                                    <ng-container matColumnDef="moeda">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Moeda </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.moeda}} </td>
+                                    </ng-container>
+
+                                    <!-- Weight Column -->
+                                    <ng-container matColumnDef="descricao">
+                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
+                                    </ng-container>
+
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                </table>
+
+                                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Blog Singel Area -->
