@@ -10,7 +10,7 @@ describe('PaginaInicialComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [PaginaInicialComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PaginaInicialComponent);
     component = fixture.componentInstance;

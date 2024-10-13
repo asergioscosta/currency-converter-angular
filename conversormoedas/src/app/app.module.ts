@@ -14,14 +14,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AppRoutingModule } from './app-routing.module';
-
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { ConversorMoedasComponent } from './conversor-moedas/conversor-moedas.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     PaginaInicialComponent,
     FooterComponent,
     HeaderComponent,
-    ListagemMoedasComponent
+    ListagemMoedasComponent,
+    ConversorMoedasComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,9 +35,11 @@ import { AppRoutingModule } from './app-routing.module';
     MatFormFieldModule,
     MatInputModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })

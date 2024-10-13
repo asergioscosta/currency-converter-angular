@@ -1,0 +1,128 @@
+<!-- Preloader -->
+<div class="preloader" style="opacity: 0; display: none;">
+    <div class="preloader-inner">
+        <div class="preloader-icon">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!-- /End Preloader -->
+
+<!-- Start Breadcrumbs -->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                <div class="breadcrumbs-content">
+                    <h1 class="page-title">Conversor de Moedas</h1>
+                </div>
+                <ul class="breadcrumb-nav">
+                    <li><a href="pagina-inicial">Página Inicial</a></li>
+                    <li>Conversor de Moedas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Breadcrumbs -->
+
+<!-- Start Blog Singel Area -->
+<section class="section blog-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
+                <div class="single-inner">
+                    <div class="post-details">
+                        <div class="main-content-head">
+                            <div class="meta-information">
+                                <h2 class="post-title">
+                                    <a href="blog-single.html">Conversor de Moedas</a>
+                                </h2>
+                                <!-- End Meta Info -->
+                                <div class="container mt-5">
+                                    <form (ngSubmit)="converter()">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <input type="number" class="form-control" [(ngModel)]="valor"
+                                                    name="valor" placeholder="Valor" required />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <select class="form-control" [(ngModel)]="moedaOrigem"
+                                                    name="moedaOrigem" required>
+                                                    <option *ngFor="let moeda of moedas" [value]="moeda">
+                                                        {{ moeda }}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <select class="form-control" [(ngModel)]="moedaDestino"
+                                                    name="moedaDestino" required>
+                                                    <option *ngFor="let moeda of moedas" [value]="moeda">
+                                                        {{ moeda }}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button type="submit" class="btn btn-primary w-100">Converter</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <div *ngIf="resultado" class="alert alert-info mt-4">
+                                        {{ valor }} {{ moedaOrigem }} = {{ resultado | number:'1.2-2' }} {{ moedaDestino
+                                        }}
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h4>Histórico de Conversões</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item" *ngFor="let item of historico">
+                                            {{ item.valor }} {{ item.moedaOrigem }} = {{ item.resultado | number:'1.2-2'
+                                            }} {{ item.moedaDestino }}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="post-social-media">
+                                    <h5 class="share-title">Compartilhe nas Redes Sociais</h5>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="lni lni-facebook-filled"></i>
+                                                <span>Facebook</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="lni lni-instagram"></i>
+                                                <span>Instagram</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="lni lni-google"></i>
+                                                <span>google+</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="lni lni-linkedin-original"></i>
+                                                <span>LinkedIn</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">
+                                                <i class="lni lni-pinterest"></i>
+                                                <span>pinterest</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
