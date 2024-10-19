@@ -1,4 +1,3 @@
-<!-- Preloader -->
 <div class="preloader" style="opacity: 0; display: none;">
     <div class="preloader-inner">
         <div class="preloader-icon">
@@ -7,9 +6,7 @@
         </div>
     </div>
 </div>
-<!-- /End Preloader -->
 
-<!-- Start Breadcrumbs -->
 <div class="breadcrumbs">
     <div class="container">
         <div class="row">
@@ -25,61 +22,302 @@
         </div>
     </div>
 </div>
-<!-- End Breadcrumbs -->
 
-<!-- Start Blog Singel Area -->
-<section class="section blog-single">
+<style>
+    :root {
+        --primary-color: #4f46e5;
+        --primary-light: #6366f1;
+        --background-color: #f9fafb;
+        --card-background: #ffffff;
+        --text-primary: #111827;
+        --text-secondary: #4b5563;
+        --text-light: #6b7280;
+        --border-color: #e5e7eb;
+        --hover-color: #f3f4f6;
+        --accent-color: #8b5cf6;
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --gradient-start: #4f46e5;
+        --gradient-end: #8b5cf6;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-primary);
+        line-height: 1.5;
+        min-height: 100vh;
+    }
+
+    .section {
+        padding: 3rem 1.5rem;
+        background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .card {
+        background: var(--card-background);
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow-md);
+        overflow: hidden;
+        border: 1px solid rgba(229, 231, 235, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    .card-header {
+        padding: 2.5rem 2rem;
+        background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        opacity: 0.1;
+    }
+
+    .card-header h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.4;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-container {
+        padding: 1.5rem;
+        background: var(--card-background);
+        border-bottom: 1px solid var(--border-color);
+        position: relative;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 1rem 1.25rem;
+        border: 2px solid var(--border-color);
+        border-radius: 1rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: var(--background-color);
+        color: var(--text-primary);
+    }
+
+    .search-input:focus {
+        outline: none;
+        border-color: var(--primary-light);
+        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    }
+
+    .search-input::placeholder {
+        color: var(--text-light);
+    }
+
+    .table-container {
+        overflow-x: auto;
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+    }
+
+    ::ng-deep .mat-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    ::ng-deep .mat-header-cell {
+        padding: 1.25rem 1.5rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        background: var(--background-color);
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    ::ng-deep .mat-cell {
+        padding: 1.25rem 1.5rem;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        border-bottom: 1px solid var(--border-color);
+        transition: all 0.2s ease;
+    }
+
+    ::ng-deep .mat-row {
+        transition: all 0.2s ease;
+    }
+
+    ::ng-deep .mat-row:hover {
+        background-color: var(--hover-color);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-sm);
+    }
+
+    ::ng-deep .mat-row:hover .mat-cell {
+        color: var(--text-primary);
+    }
+
+    ::ng-deep .mat-paginator {
+        background: var(--card-background);
+        border-top: 1px solid var(--border-color);
+        padding: 0.5rem;
+    }
+
+    ::ng-deep .mat-paginator-container {
+        min-height: 64px;
+        padding: 0 1.5rem;
+        justify-content: space-between;
+    }
+
+    ::ng-deep .mat-paginator-page-size {
+        margin-right: 2rem;
+        align-items: center;
+    }
+
+    ::ng-deep .mat-paginator-page-size-select {
+        margin: 0 0.5rem;
+    }
+
+    ::ng-deep .mat-paginator-range-label {
+        margin: 0 2rem;
+        color: var(--text-secondary);
+    }
+
+    ::ng-deep .mat-sort-header-container {
+        color: var(--primary-color);
+    }
+
+    ::ng-deep .mat-sort-header-arrow {
+        color: var(--primary-color);
+    }
+
+    /* Responsividade aprimorada */
+    @media (max-width: 768px) {
+        .section {
+            padding: 2rem 1rem;
+        }
+
+        .card-header {
+            padding: 2rem 1.5rem;
+        }
+
+        .card-header h1 {
+            font-size: 1.25rem;
+        }
+
+        .search-container {
+            padding: 1rem;
+        }
+
+        .search-input {
+            padding: 0.875rem 1rem;
+        }
+
+        ::ng-deep .mat-header-cell,
+        ::ng-deep .mat-cell {
+            padding: 1rem;
+            font-size: 0.875rem;
+        }
+    }
+
+    /* Animações suaves */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .card {
+        animation: fadeIn 0.6s ease-out;
+    }
+
+    /* Estilização do scrollbar */
+    .table-container::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    .table-container::-webkit-scrollbar-track {
+        background: var(--background-color);
+        border-radius: 4px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: 4px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb:hover {
+        background: var(--text-light);
+    }
+</style>
+
+<section class="section">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
-                <div class="single-inner">
-                    <div class="post-details">
-                        <div class="main-content-head">
-                            <div class="meta-information">
-                                <h4 class="post-title">
-                                    Aqui você encontra uma coleção completa de moedas de todo o mundo, com códigos,
-                                    nomes e descrições detalhadas para facilitar sua pesquisa.
-                                </h4>
-                                <!-- End Meta Info -->
-                            </div>
-
-                            <div class="mat-elevation-z8">
-                                <mat-form-field appearance="fill" style="width: 100%;">
-                                    <mat-label>Filtro</mat-label>
-                                    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-                                </mat-form-field>
-
-                                <table mat-table [dataSource]="dataSource" matSort style="width: 100%;">
-
-                                    <!-- Position Column -->
-                                    <ng-container matColumnDef="codigo">
-                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Código </th>
-                                        <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
-                                    </ng-container>
-
-                                    <!-- Name Column -->
-                                    <ng-container matColumnDef="moeda">
-                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Moeda </th>
-                                        <td mat-cell *matCellDef="let element"> {{element.moeda}} </td>
-                                    </ng-container>
-
-                                    <!-- Weight Column -->
-                                    <ng-container matColumnDef="descricao">
-                                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </th>
-                                        <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
-                                    </ng-container>
-
-                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                                </table>
-
-                                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="card">
+            <div class="card-header">
+                <h1>Coleção Mundial de Moedas</h1>
             </div>
+
+            <div class="search-container">
+                <input 
+                    matInput 
+                    (keyup)="applyFilter($event)" 
+                    class="search-input" 
+                    placeholder="Pesquisar moedas por código, nome ou descrição..."
+                    #input>
+            </div>
+
+            <div class="table-container">
+                <table mat-table [dataSource]="dataSource" matSort>
+                    <ng-container matColumnDef="codigo">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Código</th>
+                        <td mat-cell *matCellDef="let element">{{element.codigo}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="moeda">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Moeda</th>
+                        <td mat-cell *matCellDef="let element">{{element.moeda}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="descricao">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Descrição</th>
+                        <td mat-cell *matCellDef="let element">{{element.descricao}}</td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+
+            <mat-paginator 
+                [pageSizeOptions]="[5, 10, 20]" 
+                showFirstLastButtons>
+            </mat-paginator>
         </div>
     </div>
 </section>
-<!-- End Blog Singel Area -->
