@@ -4892,3 +4892,115 @@ blockquote span {
     color: #3865F2;
     background-color: #fff;
 }
+
+
+
+
+.section {
+    padding: 3rem 1.5rem;
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.card-header {
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, #4f46e5 0%, #8b5cf6 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+    padding: 1.5rem;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f9fafb;
+    color: #111827;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.table-container {
+    padding: 1rem;
+}
+
+/* Estilização da tabela Material */
+table {
+    width: 100%;
+}
+
+.mat-mdc-header-cell {
+    background-color: #f9fafb;
+    color: #111827;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 1rem;
+}
+
+.mat-mdc-cell {
+    color: #4b5563;
+    font-size: 0.95rem;
+    padding: 1rem;
+}
+
+.mat-mdc-row:hover {
+    background-color: #f3f4f6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .card-header {
+        padding: 2rem 1.5rem;
+    }
+
+    .card-header h1 {
+        font-size: 1.25rem;
+    }
+
+    .search-container {
+        padding: 1rem;
+    }
+
+    .search-input {
+        padding: 0.875rem 1rem;
+    }
+}
