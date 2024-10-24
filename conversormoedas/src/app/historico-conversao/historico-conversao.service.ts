@@ -43,7 +43,7 @@ export class HistoricoConversaoService {
 
   adicionarConversao(conversao: Conversao): void {
     const historico = this.getHistorico();
-    historico.unshift(conversao); // Adiciona no início do array
+    historico.unshift(conversao); 
     this.salvarHistorico(historico);
   }
 
@@ -51,6 +51,7 @@ export class HistoricoConversaoService {
     const historico = this.getHistorico();
     historico.splice(index, 1);
     this.salvarHistorico(historico);
+    
   }
 
   getConversoesAltoValor(limite: number): Conversao[] {
