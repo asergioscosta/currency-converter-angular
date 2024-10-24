@@ -5136,3 +5136,69 @@ blockquote span {
         transform: rotate(90deg);
     }
 }
+
+
+.conversion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.conversion-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.conversion-date i {
+    color: #3498db;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.delete-btn i {
+    color: #e74c3c;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #fee7e7;
+}
+
+.delete-btn:hover i {
+    transform: scale(1.1);
+}
+
+.btn-excluir {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: #ef4444;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.btn-excluir:hover {
+    background: #dc2626;
+}
+
+.btn-excluir i {
+    font-size: 1.1rem;
+}

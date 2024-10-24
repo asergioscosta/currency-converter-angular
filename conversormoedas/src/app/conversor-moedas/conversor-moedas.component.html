@@ -109,12 +109,18 @@
                                                         <span class="currency">{{ moedaDestino }}</span>
                                                     </div>
                                                 </div>
-
-
                                                 <div class="conversion-footer">
-                                                    <div class="exchange-rate">
-                                                        <span class="rate-label">Taxa de câmbio:</span>
-                                                        <span class="rate-value">{{ taxa | number: '1.4-4' }}</span>
+                                                    <div class="exchange-rate-container">
+                                                        <div class="exchange-rate-box">
+                                                            <div class="rate-icon">
+                                                                <i class="lni lni-stats-up"></i>
+                                                            </div>
+                                                            <div class="rate-info">
+                                                                <span class="rate-label">Taxa de câmbio atual</span>
+                                                                <span class="rate-value">{{ taxa | number:'1.4-4'
+                                                                    }}</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

@@ -50,7 +50,7 @@
                                                     <i class="lni lni-calendar"></i>
                                                     {{ item.data }} às {{ item.hora }}
                                                 </div>
-                                                <button class="delete-btn" (click)="excluirConversao(i)">
+                                                <button class="delete-btn" (click)="excluirConversao(i)" title="Excluir conversão">
                                                     <i class="lni lni-trash-can"></i>
                                                 </button>
                                             </div>
@@ -77,6 +77,9 @@
                                                     <span class="rate-value">{{ item.taxa | number:'1.4-4' }}</span>
                                                 </div>
                                             </div>
+                                            <button (click)="excluirConversao(i)" class="btn-excluir">
+                                                <span class="material-icons">delete</span>
+                                              </button>
                                         </div>
                                     </div>
                                 </div>
