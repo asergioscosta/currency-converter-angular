@@ -14,6 +14,7 @@ export class ConversorMoedasComponent implements OnInit {
   moedaDestino: string = 'BRL';
   resultado: number | null = null;
   moedas: string[] = [];
+  taxa: number | undefined;
 
   constructor(
     private conversorMoedasService: ConversorMoedasService,
@@ -30,6 +31,7 @@ export class ConversorMoedasComponent implements OnInit {
     this.conversorMoedasService.getExchangeRates(this.moedaOrigem).subscribe((data) => {
       const taxa = data.conversion_rates[this.moedaDestino];
       this.resultado = this.valor * taxa;
+      this.taxa = taxa;
 
       const agora = new Date();
       const conversao: Conversao = {
